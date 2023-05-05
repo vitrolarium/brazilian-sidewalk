@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjuwgqudy1inv"]
+
+[ext_resource type="PackedScene" uid="uid://8442rfdmkaiy" path="res://Objects/Scenes/sidewalk_manager.tscn" id="1_fpg5d"]
+
+[node name="Main" type="Node2D"]
+
+[node name="SidewalkManager" parent="." instance=ExtResource("1_fpg5d")]

@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://8442rfdmkaiy"]
+
+[node name="SidewalkManager" type="Node2D"]
