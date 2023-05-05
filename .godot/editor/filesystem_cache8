@@ -1,10 +1,8 @@
 2a60927148abd1d33b818b535e306557
-::res://::1683320133
+::res://::1683325108
 icon.svg::CompressedTexture2D::8308121032850633090::1683315419::1683315442::1::::<><>::
 README.md::TextFile::-1::1683319248::0::1::::<><>::
-::res://Objects/::1683320463
-::res://Objects/Main/::1683320489
-Main.tscn::PackedScene::3060755191559980191::1683320582::0::1::::<><>::
+::res://Objects/::1683320607
 ::res://Objects/Player/::1683319248
 deadDude.png::CompressedTexture2D::7100597478853929625::1683316007::1683316161::1::::<><>::
 dude1.png::CompressedTexture2D::6469415018725552878::1683316007::1683316161::1::::<><>::
@@ -12,10 +10,12 @@ dude2.png::CompressedTexture2D::5754483907015419171::1683316007::1683316161::1::
 shockDude1.png::CompressedTexture2D::1867520213350003961::1683316007::1683316161::1::::<><>::
 shockDude2.png::CompressedTexture2D::1563960290542110158::1683316007::1683316161::1::::<><>::
 shockDude3.png::CompressedTexture2D::7722271231529586194::1683316007::1683316161::1::::<><>::
-::res://Objects/Scenes/::1683320450
+::res://Objects/Scenes/::1683325080
 basic_sidewalk.tscn::PackedScene::5067428119444768521::1683320420::0::1::::<><>::uid://b5oi5xt7nfna6
 decorated_sidewalk.tscn::PackedScene::1901797078871596011::1683320426::0::1::::<><>::uid://b5oi5xt7nfna6
-sidewalk_manager.tscn::PackedScene::2377908704922171992::1683320596::0::1::::<><>::
+Main.tscn::PackedScene::3060755191559980191::1683320612::0::1::::<><>::uid://8442rfdmkaiy
+sidewalk_manager.gd::GDScript::-1::1683325080::0::1::::<>Node2D<>::
+sidewalk_manager.tscn::PackedScene::2377908704922171992::1683325006::0::1::::<><>::res://Objects/Scenes/sidewalk_manager.gd<>uid://cegx2hxloon8d
 TILE.png::CompressedTexture2D::4521527830010042763::1683316007::1683316161::1::::<><>::
 ::res://Objects/WalkingPeoples/::1683316161
 girl1.png::CompressedTexture2D::1347528821247171668::1683316007::1683316161::1::::<><>::
