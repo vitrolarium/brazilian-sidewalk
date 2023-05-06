@@ -1,12 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://cndpyrc7amum4"]
+[gd_scene load_steps=14 format=3 uid="uid://bh6ho6pu3vjdv"]
 
-[ext_resource type="Texture2D" uid="uid://cyf3k5d1cvyju" path="res://Objects/Player/dude1.png" id="1_8a5ha"]
+[ext_resource type="Texture2D" uid="uid://cljboiwyo62w7" path="res://Objects/Player/dude1.png" id="1_8a5ha"]
 [ext_resource type="Script" path="res://Objects/Player/player.gd" id="1_htj8v"]
-[ext_resource type="Texture2D" uid="uid://cn8rrkv545r2j" path="res://Objects/Player/dude2.png" id="2_ttpno"]
-[ext_resource type="Texture2D" uid="uid://1uv1xshvr2gj" path="res://Objects/Player/shockDude1.png" id="3_wo6un"]
-[ext_resource type="Texture2D" uid="uid://wjugykcat583" path="res://Objects/Player/shockDude2.png" id="4_qmioh"]
-[ext_resource type="Texture2D" uid="uid://diayxc4jdv48e" path="res://Objects/Player/shockDude3.png" id="5_t7yfs"]
-[ext_resource type="Texture2D" uid="uid://c8ft2klyuvk7j" path="res://Objects/Player/deadDude.png" id="6_cxqrs"]
+[ext_resource type="Texture2D" uid="uid://17d8g82mh1yo" path="res://Objects/Player/dude2.png" id="2_ttpno"]
+[ext_resource type="Texture2D" uid="uid://br0cvx055qnlu" path="res://Objects/Player/shockDude1.png" id="3_wo6un"]
+[ext_resource type="Texture2D" uid="uid://crfkij0arlm8n" path="res://Objects/Player/shockDude2.png" id="4_qmioh"]
+[ext_resource type="Texture2D" uid="uid://dk4ion8vsey0" path="res://Objects/Player/shockDude3.png" id="5_t7yfs"]
+[ext_resource type="Texture2D" uid="uid://8q3lund83x3i" path="res://Objects/Player/deadDude.png" id="6_cxqrs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ee1d8"]
 size = Vector2(13, 16)
