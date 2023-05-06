@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://bom7dnqdsq0yt"]
+
+[ext_resource type="Script" path="res://Objects/Scenes/Main.gd" id="1_fmxtq"]
+[ext_resource type="PackedScene" path="res://Objects/Scenes/sidewalk_manager.tscn" id="1_fpg5d"]
+[ext_resource type="PackedScene" path="res://Objects/Player/player.tscn" id="2_diuxg"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_fmxtq")
+
+[node name="SidewalkManager" parent="." instance=ExtResource("1_fpg5d")]
+
+[node name="Player" parent="." instance=ExtResource("2_diuxg")]
+position = Vector2(67, 94)
