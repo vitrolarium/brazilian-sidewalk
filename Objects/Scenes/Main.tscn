@@ -6,8 +6,26 @@
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_fmxtq")
+metadata/_edit_vertical_guides_ = [112.0, 0.0]
+metadata/_edit_horizontal_guides_ = [0.0, 192.0]
 
 [node name="SidewalkManager" parent="." instance=ExtResource("1_fpg5d")]
 
 [node name="Player" parent="." instance=ExtResource("2_diuxg")]
 position = Vector2(67, 94)
+
+[node name="die" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_font_sizes/font_size = 8
+text = "Fall"
+
+[node name="shock" type="Button" parent="."]
+offset_top = 26.0
+offset_right = 40.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 11
+text = "Shock"
+
+[connection signal="pressed" from="die" to="." method="_on_die_pressed"]
+[connection signal="pressed" from="shock" to="." method="_on_shock_pressed"]

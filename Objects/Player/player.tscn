@@ -220,6 +220,8 @@ _data = {
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_htj8v")
 metadata/_edit_group_ = true
+metadata/_edit_horizontal_guides_ = [-14.0]
+metadata/_edit_vertical_guides_ = [-6.0]
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, -8)
