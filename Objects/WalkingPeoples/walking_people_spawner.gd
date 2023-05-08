@@ -4,7 +4,13 @@ extends Node2D
 
 func activate(): $SummonTimer.start()
 
-func deactivate(): $SummonTimer.stop()
+func deactivate(stop_peoples := false):
+	$SummonTimer.stop()
+	if stop_peoples:
+		for child in get_children():
+			if child is CharacterBody2D and child.has_method("deactivate"):
+				child.deactivate()
+				
 
 func summon_people():
 	if walking_peoples.is_empty():

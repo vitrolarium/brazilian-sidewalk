@@ -6,9 +6,13 @@ const WALK_DIRECTION := Vector2.DOWN
 
 var enabled : bool = false
 
-func activate(): enabled = true
+func activate():
+	enabled = true
+	$AnimationPlayer.play()
 
-func deactivate(): enabled = false
+func deactivate():
+	enabled = false
+	$AnimationPlayer.pause()
 
 func _physics_process(_delta: float) -> void:
 	if enabled:
