@@ -80,6 +80,7 @@ script = ExtResource("1_opduh")
 [node name="ObjectDetection" type="ShapeCast2D" parent="."]
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_akb23")
+target_position = Vector2(0, 100)
 collision_mask = 14
 collide_with_areas = true
 
@@ -95,3 +96,5 @@ libraries = {
 
 [node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(0, -8)
+
+[connection signal="screen_exited" from="VisibilityNotifier" to="." method="leave_screen"]
