@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://biv4ggorh453n"]
+[gd_scene load_steps=5 format=3 uid="uid://biv4ggorh453n"]
 
 [ext_resource type="Script" path="res://Objects/Scenes/Main.gd" id="1_fmxtq"]
 [ext_resource type="PackedScene" uid="uid://8442rfdmkaiy" path="res://Objects/Scenes/sidewalks/sidewalk_manager.tscn" id="1_fpg5d"]
 [ext_resource type="PackedScene" uid="uid://bh6ho6pu3vjdv" path="res://Objects/Player/player.tscn" id="2_diuxg"]
+[ext_resource type="PackedScene" uid="uid://dp53q87pb3bjc" path="res://Objects/WalkingPeoples/walking_people_spawner.tscn" id="3_06x6p"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_fmxtq")
@@ -10,6 +11,8 @@ metadata/_edit_vertical_guides_ = [112.0, 0.0]
 metadata/_edit_horizontal_guides_ = [0.0, 192.0]
 
 [node name="SidewalkManager" parent="." instance=ExtResource("1_fpg5d")]
+
+[node name="WalkingPeopleSpawner" parent="." instance=ExtResource("3_06x6p")]
 
 [node name="Player" parent="." instance=ExtResource("2_diuxg")]
 position = Vector2(67, 94)

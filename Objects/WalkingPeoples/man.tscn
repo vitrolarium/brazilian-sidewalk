@@ -1,0 +1,62 @@
+[gd_scene load_steps=6 format=3 uid="uid://bmmuxx8t1x4gq"]
+
+[ext_resource type="PackedScene" uid="uid://bgmkobkd2mca7" path="res://Objects/WalkingPeoples/walking-people-base.tscn" id="1_in7n3"]
+[ext_resource type="Texture2D" uid="uid://hwsy6ws2irk4" path="res://Objects/WalkingPeoples/man1.png" id="2_p5ble"]
+[ext_resource type="Texture2D" uid="uid://bxt12vh3upxin" path="res://Objects/WalkingPeoples/man2.png" id="3_8sfc6"]
+
+[sub_resource type="Animation" id="Animation_otdm7"]
+resource_name = "walking"
+length = 0.6
+loop_mode = 1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("2_p5ble"), ExtResource("3_8sfc6")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.03, 0.1, 0.15, 0.3, 0.33, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1.0625), Vector2(1.125, 1), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1.0625), Vector2(1.125, 1), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.03, 0.1, 0.15, 0.3, 0.33, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -8), Vector2(0, -8.5), Vector2(0, -8), Vector2(0, -8), Vector2(0, -8), Vector2(0, -8.5), Vector2(0, -8), Vector2(0, -8)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f3cco"]
+_data = {
+"walking": SubResource("Animation_otdm7")
+}
+
+[node name="Man" instance=ExtResource("1_in7n3")]
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource("2_p5ble")
+
+[node name="AnimationPlayer" parent="." index="2"]
+libraries = {
+"": SubResource("AnimationLibrary_f3cco")
+}
