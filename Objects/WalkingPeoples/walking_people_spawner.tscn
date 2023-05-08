@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://dp53q87pb3bjc"]
+
+[ext_resource type="Script" path="res://Objects/WalkingPeoples/walking_people_spawner.gd" id="1_x7g5s"]
+[ext_resource type="PackedScene" uid="uid://yahhxwj1utyg" path="res://Objects/WalkingPeoples/girl.tscn" id="2_ei0mk"]
+[ext_resource type="PackedScene" uid="uid://bmmuxx8t1x4gq" path="res://Objects/WalkingPeoples/man.tscn" id="3_r5swy"]
+[ext_resource type="PackedScene" uid="uid://bnulditclkl1h" path="res://Objects/WalkingPeoples/veia.tscn" id="4_35mfc"]
+
+[sub_resource type="Curve2D" id="Curve2D_jpv5f"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 16, 0, 0, 0, 0, 0, 96, 0.103)
+}
+point_count = 2
+
+[node name="WalkingPeopleSpawner" type="Node2D"]
+script = ExtResource("1_x7g5s")
+walking_peoples = [ExtResource("2_ei0mk"), ExtResource("3_r5swy"), ExtResource("4_35mfc")]
+
+[node name="SummonTimer" type="Timer" parent="."]
+
+[node name="SpawnPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_jpv5f")
+
+[node name="SpawnPoint" type="PathFollow2D" parent="SpawnPath"]
+position = Vector2(16, -8)
+v_offset = -8.0
+rotates = false
+
+[connection signal="timeout" from="SummonTimer" to="." method="summon_people"]

@@ -1,7 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgmkobkd2mca7"]
+[gd_scene load_steps=7 format=3 uid="uid://bgmkobkd2mca7"]
+
+[ext_resource type="Script" path="res://Objects/WalkingPeoples/walking-people-base.gd" id="1_opduh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_akb23"]
+size = Vector2(8, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6aiub"]
 size = Vector2(7, 3)
+
+[sub_resource type="Animation" id="Animation_wxj5t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
 
 [sub_resource type="Animation" id="Animation_agtqm"]
 resource_name = "walking"
@@ -45,21 +65,6 @@ tracks/2/keys = {
 "values": [Vector2(0, -8), Vector2(0, -8.5), Vector2(0, -8), Vector2(0, -8), Vector2(0, -8), Vector2(0, -8.5), Vector2(0, -8), Vector2(0, -8)]
 }
 
-[sub_resource type="Animation" id="Animation_wxj5t"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [null]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_56o2d"]
 _data = {
 "RESET": SubResource("Animation_wxj5t"),
@@ -67,9 +72,16 @@ _data = {
 }
 
 [node name="WalkingPeopleBase" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_opduh")
 
-[node name="Sprite" type="Sprite2D" parent="."]
-position = Vector2(0, -8)
+[node name="VisibilityNotifier" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="ObjectDetection" type="ShapeCast2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_akb23")
+collision_mask = 14
+collide_with_areas = true
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, -1.5)
@@ -80,3 +92,6 @@ autoplay = "walking"
 libraries = {
 "": SubResource("AnimationLibrary_56o2d")
 }
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -8)

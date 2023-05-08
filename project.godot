@@ -48,6 +48,13 @@ move_right={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="world"
+2d_physics/layer_2="player"
+2d_physics/layer_3="peoples"
+2d_physics/layer_4="props"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
