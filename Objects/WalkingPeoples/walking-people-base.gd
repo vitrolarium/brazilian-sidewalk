@@ -2,23 +2,26 @@ extends CharacterBody2D
 
 const PLAYER_COLLISION_VALUE = 2
 const WALK_DIRECTION := Vector2.DOWN
+const NORMAL_SPEED_SCALE = 1
+const STRESSED_SPEED_SCALE = 2
 
 @export var speed : int = 98
 @export var dodge_speed : int = 49
-@export var ignore_player : bool = false
+@export var is_stressed : bool = false
 
-var enabled : bool = false
+var _enabled : bool = false
 
 func activate():
-	enabled = true
+	_enabled = true
+	$AnimationPlayer.speed_scale = NORMAL_SPEED_SCALE if not is_stressed else STRESSED_SPEED_SCALE
 	$AnimationPlayer.play()
+
+func deactivate():
+	_enabled = false
+	$AnimationPlayer.pause()
 
 func is_player_on_detection(collider_index) -> bool:
 	return $ObjectDetection.get_collider(0).get_collision_layer_value(PLAYER_COLLISION_VALUE)
-
-func deactivate():
-	enabled = false
-	$AnimationPlayer.pause()
 
 func walk_dodge(dodge_direction : float):
 	velocity = WALK_DIRECTION * speed
@@ -30,7 +33,7 @@ func walk():
 func move():
 	if $ObjectDetection.is_colliding():
 		var dodge_dir = position.x - $ObjectDetection.get_collider(0).position.x
-		if (ignore_player and not is_player_on_detection(0)) or (not ignore_player):
+		if (is_stressed and not is_player_on_detection(0)) or (not is_stressed):
 			walk_dodge(dodge_dir)
 		else:
 			walk_dodge(-dodge_dir)
@@ -40,7 +43,7 @@ func move():
 
 
 func _physics_process(_delta: float) -> void:
-	if enabled:
+	if _enabled:
 		move()
 
 func _leave_screen() -> void:
