@@ -22,9 +22,9 @@ func _ready() -> void:
 func _on_player_game_over() -> void:
 	$SidewalkManager.is_enabled = false
 	$PropSpawner.deactivate(true)
-	$WalkingPeopleSpawner.deactivate(true)
+	#$WalkingPeopleSpawner.deactivate(true)
 	is_game_over = true
 
-func _unhandled_key_input(event: InputEvent) -> void:
-	if event.is_pressed() and event.is_action_pressed("ui_accept"):
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("reset"):
 		start_game()

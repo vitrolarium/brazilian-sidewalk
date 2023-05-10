@@ -15,11 +15,11 @@ metadata/_edit_horizontal_guides_ = [0.0, 192.0]
 
 [node name="PropSpawner" parent="." instance=ExtResource("3_u11o0")]
 position = Vector2(0, -13)
-summon_wait_time = 1.0
+summon_wait_time = 0.25
 prop_speed = 120
 
 [node name="WalkingPeopleSpawner" parent="." instance=ExtResource("3_06x6p")]
-summon_wait_time = 0.5
+summon_wait_time = 0.25
 
 [node name="Player" parent="." instance=ExtResource("2_diuxg")]
 position = Vector2(67, 94)
