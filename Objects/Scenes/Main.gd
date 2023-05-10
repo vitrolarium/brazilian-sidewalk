@@ -4,6 +4,7 @@ extends Node2D
 func start_game():
 	$SidewalkManager.is_enabled = true
 	$WalkingPeopleSpawner.activate()
+	$PropSpawner.activate()
 	$Player.show()
 
 func stop_game(reason : String):
@@ -11,7 +12,7 @@ func stop_game(reason : String):
 		$Player.call(reason)
 	else:
 		push_warning(reason, "() method doesnt exists in player")
-	
+	$PropSpawner.deactivate(true)
 	$SidewalkManager.is_enabled = false
 	$WalkingPeopleSpawner.deactivate(true)
 

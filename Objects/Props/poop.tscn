@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsy66vpa0aw45"]
+
+[ext_resource type="PackedScene" uid="uid://lo3mhvymnw4g" path="res://Objects/Props/Props-base.tscn" id="1_0mjsm"]
+[ext_resource type="Texture2D" uid="uid://bgyvx2gf3wqun" path="res://Objects/Scenes/TILE.png" id="2_4t7uf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gol84"]
+
+[node name="Prop" instance=ExtResource("1_0mjsm")]
+
+[node name="CollisionShape" parent="." index="1"]
+shape = SubResource("RectangleShape2D_gol84")
+
+[node name="Sprite" parent="." index="2"]
+position = Vector2(0, -5)
+texture = ExtResource("2_4t7uf")
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)

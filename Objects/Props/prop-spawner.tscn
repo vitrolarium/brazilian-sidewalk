@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyefu35yjq2b1"]
+
+[ext_resource type="Script" path="res://Objects/Props/prop-spawner.gd" id="1_kfd3t"]
+[ext_resource type="PackedScene" uid="uid://b0k8thgcrcrhb" path="res://Objects/Props/hole.tscn" id="2_iwx7x"]
+[ext_resource type="PackedScene" uid="uid://dsy66vpa0aw45" path="res://Objects/Props/poop.tscn" id="3_ie0dt"]
+
+[sub_resource type="Curve2D" id="Curve2D_2chbh"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 104, 0.103)
+}
+point_count = 2
+
+[node name="PropSpawner" type="Node2D"]
+script = ExtResource("1_kfd3t")
+props = [ExtResource("2_iwx7x"), ExtResource("3_ie0dt")]
+
+[node name="SpawnPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_2chbh")
+
+[node name="SpawnPoint" type="PathFollow2D" parent="SpawnPath"]
+position = Vector2(8, -8)
+v_offset = -8.0
+rotates = false
