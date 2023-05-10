@@ -6,9 +6,38 @@ const _CLAMPPED_AREA = Rect2(
 	_WALKING_AREA.position + Vector2(0 + _SPRITE_SIZE.x / 2, _SPRITE_SIZE.y), 
 	_WALKING_AREA.end - Vector2(_SPRITE_SIZE.x, _SPRITE_SIZE.y))
 
+signal game_over
+
 @export var speed : int = 98
 
 var is_dead = false
+
+func shock():
+	$AnimationPlayer.play("shock")
+	is_dead = true
+	emit_signal("game_over")
+
+func fall():
+	$AnimationPlayer.play("fall")
+	is_dead = true
+	emit_signal("game_over")
+
+func hit_the_ground():
+	$AnimationPlayer.play("dead")
+	is_dead = true
+	emit_signal("game_over")
+
+func reset():
+	$AnimationPlayer.play("walking")
+	is_dead = false
+
+func prop_collided(prop : Area2D):
+	if prop.prop_type == prop.PropType.HOLE:
+		fall()
+	elif prop.prop_type == prop.PropType.OBSTACLE:
+		hit_the_ground()
+	elif prop.prop_type == prop.PropType.ELETRICITY:
+		shock()
 
 func _physics_process(_delta: float) -> void:
 	var direction = Vector2(
@@ -19,15 +48,3 @@ func _physics_process(_delta: float) -> void:
 		velocity = direction.normalized() * speed
 		move_and_slide()
 		position = position.clamp(_CLAMPPED_AREA.position, _CLAMPPED_AREA.end)
-
-func shock():
-	$AnimationPlayer.play("shock")
-	is_dead = true
-
-func fall():
-	$AnimationPlayer.play("dead")
-	is_dead = true
-
-func reset():
-	$AnimationPlayer.play("walking")
-	is_dead = false

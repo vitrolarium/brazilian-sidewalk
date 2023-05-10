@@ -12,10 +12,6 @@ func stop_game(reason : String):
 		$Player.call(reason)
 	else:
 		push_warning(reason, "() method doesnt exists in player")
-	$PropSpawner.deactivate(true)
-	$SidewalkManager.is_enabled = false
-	$WalkingPeopleSpawner.deactivate(true)
-
 
 func _ready() -> void:
 	start_game()
@@ -25,3 +21,9 @@ func _on_die_pressed() -> void:
 
 func _on_shock_pressed() -> void:
 	stop_game("shock")
+
+
+func _on_player_game_over() -> void:
+	$PropSpawner.deactivate(true)
+	$SidewalkManager.is_enabled = false
+	$WalkingPeopleSpawner.deactivate(true)

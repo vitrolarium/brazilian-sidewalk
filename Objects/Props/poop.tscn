@@ -4,10 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://bgyvx2gf3wqun" path="res://Objects/Scenes/TILE.png" id="2_4t7uf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gol84"]
+size = Vector2(6, 3)
 
 [node name="Prop" instance=ExtResource("1_0mjsm")]
 
 [node name="CollisionShape" parent="." index="1"]
+position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_gol84")
 
 [node name="Sprite" parent="." index="2"]

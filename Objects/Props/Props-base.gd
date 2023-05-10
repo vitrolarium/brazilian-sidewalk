@@ -3,6 +3,7 @@ extends Area2D
 const MOVE_DIRECTION := Vector2.DOWN
 
 enum PropType {
+	OBSTACLE,
 	HOLE,
 	ELETRICITY
 }
@@ -12,7 +13,6 @@ enum PropType {
 
 var enabled = false
 
-
 func activate():
 	enabled = true
 
@@ -21,6 +21,10 @@ func deactivate():
 
 func screen_leave() -> void:
 	queue_free()
+
+func on_body_entered(body: Node2D) -> void:
+	if body.has_method("prop_collided"):
+		body.call("prop_collided", self)
 
 func _process(delta: float) -> void:
 	if enabled:
