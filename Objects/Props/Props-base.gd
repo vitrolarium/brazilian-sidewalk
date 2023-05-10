@@ -22,6 +22,6 @@ func deactivate():
 func screen_leave() -> void:
 	queue_free()
 
-func _physics_process(delta: float) -> void:
+func _process(delta: float) -> void:
 	if enabled:
 		position += MOVE_DIRECTION * speed * delta

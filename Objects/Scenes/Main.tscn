@@ -14,6 +14,7 @@ metadata/_edit_horizontal_guides_ = [0.0, 192.0]
 [node name="SidewalkManager" parent="." instance=ExtResource("1_fpg5d")]
 
 [node name="PropSpawner" parent="." instance=ExtResource("3_u11o0")]
+position = Vector2(0, -13)
 summon_wait_time = 1.0
 prop_speed = 120
 
