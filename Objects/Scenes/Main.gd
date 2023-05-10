@@ -1,10 +1,13 @@
 extends Node2D
 
+var is_game_over = false
 
 func start_game():
+	print("game started")
 	$SidewalkManager.is_enabled = true
 	$WalkingPeopleSpawner.activate()
 	$PropSpawner.activate()
+	$Player.reset()
 	$Player.show()
 
 func stop_game(reason : String):
@@ -16,14 +19,12 @@ func stop_game(reason : String):
 func _ready() -> void:
 	start_game()
 
-func _on_die_pressed() -> void:
-	stop_game("fall")
-
-func _on_shock_pressed() -> void:
-	stop_game("shock")
-
-
 func _on_player_game_over() -> void:
-	$PropSpawner.deactivate(true)
 	$SidewalkManager.is_enabled = false
+	$PropSpawner.deactivate(true)
 	$WalkingPeopleSpawner.deactivate(true)
+	is_game_over = true
+
+func _unhandled_key_input(event: InputEvent) -> void:
+	if event.is_pressed() and event.is_action_pressed("ui_accept"):
+		start_game()

@@ -24,19 +24,4 @@ summon_wait_time = 0.5
 [node name="Player" parent="." instance=ExtResource("2_diuxg")]
 position = Vector2(67, 94)
 
-[node name="die" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
-theme_override_font_sizes/font_size = 8
-text = "Fall"
-
-[node name="shock" type="Button" parent="."]
-offset_top = 26.0
-offset_right = 40.0
-offset_bottom = 50.0
-theme_override_font_sizes/font_size = 11
-text = "Shock"
-
 [connection signal="game_over" from="Player" to="." method="_on_player_game_over"]
-[connection signal="pressed" from="die" to="." method="_on_die_pressed"]
-[connection signal="pressed" from="shock" to="." method="_on_shock_pressed"]

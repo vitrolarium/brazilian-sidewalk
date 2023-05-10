@@ -28,6 +28,9 @@ func hit_the_ground():
 	emit_signal("game_over")
 
 func reset():
+	print("player reset")
+	$AnimationPlayer.play("RESET")
+	$AnimationPlayer.advance(0)
 	$AnimationPlayer.play("walking")
 	is_dead = false
 

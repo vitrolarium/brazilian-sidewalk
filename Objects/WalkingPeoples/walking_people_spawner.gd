@@ -12,7 +12,11 @@ enum PeopleType {NORMAL, STRESSED}
 
 var _summon_timer : Timer
 
-func activate(): _summon_timer.start()
+func activate():
+	_summon_timer.start()
+	for child in get_children():
+		if child is CharacterBody2D and child.has_method("activate"):
+			child.activate()
 
 func deactivate(stop_peoples := false):
 	_summon_timer.stop()
