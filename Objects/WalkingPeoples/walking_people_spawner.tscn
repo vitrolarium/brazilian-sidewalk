@@ -13,11 +13,8 @@ point_count = 2
 
 [node name="WalkingPeopleSpawner" type="Node2D"]
 script = ExtResource("1_x7g5s")
+summon_wait_time = 0.1
 walking_peoples = [ExtResource("2_ei0mk"), ExtResource("3_r5swy"), ExtResource("4_35mfc")]
-stressed_people_chance = 0.1
-
-[node name="SummonTimer" type="Timer" parent="."]
-wait_time = 0.5
 
 [node name="SpawnPath" type="Path2D" parent="."]
 curve = SubResource("Curve2D_jpv5f")
@@ -26,5 +23,3 @@ curve = SubResource("Curve2D_jpv5f")
 position = Vector2(8, -8)
 v_offset = -8.0
 rotates = false
-
-[connection signal="timeout" from="SummonTimer" to="." method="summon_people"]

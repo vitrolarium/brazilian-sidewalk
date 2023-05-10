@@ -2,15 +2,20 @@ extends Node2D
 
 enum PeopleType {NORMAL, STRESSED}
 
+@export_category("Summon Timer")
+@export var summon_wait_time : float = 0.5
+@export_category("Walking People Settings")
 @export var walking_peoples : Array
 @export var normal_people_speed : int = 98
 @export var stressed_people_speed : int = 148
 @export var stressed_people_chance : float = 0.2
 
-func activate(): $SummonTimer.start()
+var _summon_timer : Timer
+
+func activate(): _summon_timer.start()
 
 func deactivate(stop_peoples := false):
-	$SummonTimer.stop()
+	_summon_timer.stop()
 	if stop_peoples:
 		for child in get_children():
 			if child is CharacterBody2D and child.has_method("deactivate"):
@@ -40,4 +45,10 @@ func summon_people():
 			push_error("the object ", choosen_people, "is not a CharacterBody2D.")
 	else:
 		push_error("the walking_peoples array has values that cannot be converted to PackedScene.")
-		
+
+func _ready() -> void:
+	_summon_timer = Timer.new()
+	_summon_timer.connect("timeout", summon_people)
+	_summon_timer.wait_time = summon_wait_time
+	add_child(_summon_timer)
+	
