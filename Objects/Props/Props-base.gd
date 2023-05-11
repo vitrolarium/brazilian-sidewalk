@@ -6,7 +6,8 @@ enum PropType {
 	OBSTACLE,
 	HOLE,
 	ELETRICITY,
-	POST
+	POST,
+	SHOCK_POST
 }
 
 @export var speed : int = 98

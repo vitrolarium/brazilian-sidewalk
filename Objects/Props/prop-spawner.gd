@@ -23,7 +23,12 @@ func deactivate(stop_props := false):
 
 func spawn_prop(new_prop : Area2D):
 	$SpawnPath/SpawnPoint.progress_ratio = randf()
-	new_prop.position = $SpawnPath/SpawnPoint.position
+	
+	if new_prop.prop_type == new_prop.PropType.POST or new_prop.prop_type == new_prop.PropType.SHOCK_POST:
+		new_prop.position = $PostPosition.position
+	else:
+		new_prop.position = $SpawnPath/SpawnPoint.position
+	
 	new_prop.speed = prop_speed
 	new_prop.activate()
 	add_child(new_prop)

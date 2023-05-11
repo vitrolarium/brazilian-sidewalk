@@ -39,7 +39,7 @@ func prop_collided(prop : Area2D):
 		fall()
 	elif prop.prop_type == prop.PropType.OBSTACLE:
 		hit_the_ground()
-	elif prop.prop_type == prop.PropType.ELETRICITY:
+	elif prop.prop_type == prop.PropType.ELETRICITY or prop.prop_type == prop.PropType.SHOCK_POST:
 		shock()
 
 func _physics_process(_delta: float) -> void:
