@@ -5,7 +5,8 @@ const MOVE_DIRECTION := Vector2.DOWN
 enum PropType {
 	OBSTACLE,
 	HOLE,
-	ELETRICITY
+	ELETRICITY,
+	POST
 }
 
 @export var speed : int = 98
