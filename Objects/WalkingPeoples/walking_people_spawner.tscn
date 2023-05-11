@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dp53q87pb3bjc"]
+[gd_scene load_steps=7 format=3 uid="uid://dp53q87pb3bjc"]
 
 [ext_resource type="Script" path="res://Objects/WalkingPeoples/walking_people_spawner.gd" id="1_x7g5s"]
 [ext_resource type="PackedScene" uid="uid://yahhxwj1utyg" path="res://Objects/WalkingPeoples/girl.tscn" id="2_ei0mk"]
 [ext_resource type="PackedScene" uid="uid://bmmuxx8t1x4gq" path="res://Objects/WalkingPeoples/man.tscn" id="3_r5swy"]
 [ext_resource type="PackedScene" uid="uid://bnulditclkl1h" path="res://Objects/WalkingPeoples/veia.tscn" id="4_35mfc"]
+[ext_resource type="PackedScene" uid="uid://bdafpu02omgfw" path="res://Objects/WalkingPeoples/RATU.tscn" id="5_os4ip"]
 
 [sub_resource type="Curve2D" id="Curve2D_jpv5f"]
 _data = {
@@ -14,7 +15,7 @@ point_count = 2
 [node name="WalkingPeopleSpawner" type="Node2D"]
 script = ExtResource("1_x7g5s")
 summon_wait_time = 0.1
-walking_peoples = [ExtResource("2_ei0mk"), ExtResource("3_r5swy"), ExtResource("4_35mfc")]
+walking_peoples = [ExtResource("2_ei0mk"), ExtResource("3_r5swy"), ExtResource("4_35mfc"), ExtResource("5_os4ip")]
 
 [node name="SpawnPath" type="Path2D" parent="."]
 curve = SubResource("Curve2D_jpv5f")
