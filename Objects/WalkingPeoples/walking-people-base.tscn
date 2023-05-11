@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgmkobkd2mca7"]
+[gd_scene load_steps=14 format=3 uid="uid://bgmkobkd2mca7"]
 
 [ext_resource type="Script" path="res://Objects/WalkingPeoples/walking-people-base.gd" id="1_opduh"]
+[ext_resource type="Texture2D" uid="uid://bsmalg1h8oq0y" path="res://Objects/WalkingPeoples/stressed_indicator.png" id="2_xf3x1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_akb23"]
 size = Vector2(8, 1)
@@ -71,11 +72,56 @@ _data = {
 "walking": SubResource("Animation_agtqm")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2c27"]
+atlas = ExtResource("2_xf3x1")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgtx8"]
+atlas = ExtResource("2_xf3x1")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrj05"]
+atlas = ExtResource("2_xf3x1")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqdyr"]
+atlas = ExtResource("2_xf3x1")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58b0m"]
+atlas = ExtResource("2_xf3x1")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yv8ma"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2c27")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qgtx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hrj05")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iqdyr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58b0m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
 [node name="WalkingPeopleBase" type="CharacterBody2D"]
 collision_layer = 4
 script = ExtResource("1_opduh")
 
 [node name="VisibilityNotifier" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0, -9)
+scale = Vector2(1, 1.9)
 
 [node name="ObjectDetection" type="ShapeCast2D" parent="."]
 position = Vector2(0.5, 0)
@@ -95,5 +141,13 @@ libraries = {
 
 [node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(0, -8)
+
+[node name="StressedSprite" type="AnimatedSprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.376471)
+position = Vector2(1, -18)
+sprite_frames = SubResource("SpriteFrames_yv8ma")
+autoplay = "default"
+frame_progress = 0.0223878
 
 [connection signal="screen_exited" from="VisibilityNotifier" to="." method="_leave_screen"]

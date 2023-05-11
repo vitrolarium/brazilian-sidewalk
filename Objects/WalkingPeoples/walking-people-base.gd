@@ -17,6 +17,7 @@ func activate():
 	_enabled = true
 	$AnimationPlayer.speed_scale = NORMAL_SPEED_SCALE if not is_stressed else STRESSED_SPEED_SCALE
 	modulate = NORMAL_COLOR if not is_stressed else STRESSED_COLOR
+	$StressedSprite.visible = is_stressed
 	$AnimationPlayer.play("walking")
 
 func deactivate():

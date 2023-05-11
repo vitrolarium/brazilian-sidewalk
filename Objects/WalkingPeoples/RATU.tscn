@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdafpu02omgfw"]
+[gd_scene load_steps=7 format=3 uid="uid://bdafpu02omgfw"]
 
 [ext_resource type="PackedScene" uid="uid://bgmkobkd2mca7" path="res://Objects/WalkingPeoples/walking-people-base.tscn" id="1_2ly5l"]
 [ext_resource type="Texture2D" uid="uid://df3jpjy62coah" path="res://Objects/Props/RATU.png" id="2_4wb3d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_umauc"]
+size = Vector2(3, 2)
 
 [sub_resource type="Animation" id="Animation_l5qjb"]
 length = 0.001
@@ -68,10 +71,18 @@ _data = {
 
 [node name="WalkingPeopleBase" instance=ExtResource("1_2ly5l")]
 
+[node name="CollisionShape" parent="." index="2"]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_umauc")
+
 [node name="AnimationPlayer" parent="." index="3"]
 libraries = {
 "": SubResource("AnimationLibrary_14ice")
 }
 
 [node name="Sprite" parent="." index="4"]
-scale = Vector2(1.05, 1)
+position = Vector2(0, -8.18808)
+scale = Vector2(1.07798, 1.02351)
+
+[node name="StressedSprite" parent="." index="5"]
+position = Vector2(0, -10)
