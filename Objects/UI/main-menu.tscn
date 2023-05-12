@@ -1,0 +1,84 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5j40cadxt4j"]
+
+[ext_resource type="Theme" uid="uid://o7vaqhnt5s5i" path="res://Objects/UI/default_theme.tres" id="1_q30o6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j88m2"]
+bg_color = Color(0.137255, 0.470588, 0.137255, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.133333, 0.454902, 0.133333, 1)
+border_blend = true
+shadow_color = Color(0, 0, 0, 0.203922)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ucf4"]
+draw_center = false
+border_width_top = 1
+border_width_bottom = 1
+border_color = Color(0.886275, 0.811765, 0.160784, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_q30o6")
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_j88m2")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.0
+offset_top = -75.0
+offset_right = 70.0
+offset_bottom = -47.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_7ucf4")
+text = "Brazilian Sidewalk"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.0
+offset_top = -22.0
+offset_right = 63.0
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.0
+offset_top = -15.0
+offset_right = 38.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play"

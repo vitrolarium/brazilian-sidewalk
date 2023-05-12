@@ -1,0 +1,32 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://o7vaqhnt5s5i"]
+
+[ext_resource type="FontFile" uid="uid://dkm0fexp6r1yw" path="res://Minecraftia-Regular.ttf" id="1_knbrc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ytec"]
+bg_color = Color(0.819608, 0.647059, 0.121569, 1)
+border_width_bottom = 2
+border_color = Color(0.760784, 0.560784, 0.145098, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s73vu"]
+bg_color = Color(0.282353, 0.501961, 0.282353, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.239216, 0.478431, 0.247059, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.203922)
+shadow_size = 2
+
+[resource]
+default_font = ExtResource("1_knbrc")
+default_font_size = 13
+Button/styles/normal = SubResource("StyleBoxFlat_0ytec")
+Panel/styles/panel = SubResource("StyleBoxFlat_s73vu")

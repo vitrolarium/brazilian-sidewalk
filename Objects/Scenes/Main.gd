@@ -3,7 +3,6 @@ extends Node2D
 var is_game_over = false
 
 func start_game():
-	print("game started")
 	$SidewalkManager.is_enabled = true
 	$WalkingPeopleSpawner.activate()
 	$PropSpawner.activate()
