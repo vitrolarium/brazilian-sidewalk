@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c5j40cadxt4j"]
+[gd_scene load_steps=6 format=3 uid="uid://c5j40cadxt4j"]
 
 [ext_resource type="Theme" uid="uid://o7vaqhnt5s5i" path="res://Objects/UI/default_theme.tres" id="1_q30o6"]
+[ext_resource type="Script" path="res://Objects/UI/main-menu.gd" id="2_mdqvl"]
+[ext_resource type="PackedScene" uid="uid://biv4ggorh453n" path="res://Objects/Scenes/Main.tscn" id="3_3r00b"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j88m2"]
 bg_color = Color(0.137255, 0.470588, 0.137255, 1)
@@ -26,6 +28,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_q30o6")
+script = ExtResource("2_mdqvl")
+main_game = ExtResource("3_3r00b")
 
 [node name="Panel2" type="Panel" parent="."]
 layout_mode = 1
@@ -82,3 +86,5 @@ offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Play"
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

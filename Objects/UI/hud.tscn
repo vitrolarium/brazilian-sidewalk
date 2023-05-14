@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfmrxvv3yuw68"]
+
+[ext_resource type="Theme" uid="uid://o7vaqhnt5s5i" path="res://Objects/UI/default_theme.tres" id="1_nk4ud"]
+[ext_resource type="Script" path="res://Objects/UI/hud.gd" id="2_7h14t"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2e6ja"]
+font_size = 10
+font_color = Color(0.65098, 1, 0.666667, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fyigs"]
+font_size = 10
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_nk4ud")
+script = ExtResource("2_7h14t")
+
+[node name="MoneyLabel" type="Label" parent="."]
+layout_mode = 1
+offset_right = 1.0
+offset_bottom = 15.0
+text = "R$50.00"
+label_settings = SubResource("LabelSettings_2e6ja")
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1.0
+offset_bottom = 15.0
+grow_horizontal = 0
+text = "0"
+label_settings = SubResource("LabelSettings_fyigs")

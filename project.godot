@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Brazilian-sidewalk"
-run/main_scene="res://Objects/Scenes/Main.tscn"
+run/main_scene="res://Objects/UI/main-menu.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 boot_splash/use_filter=false
 config/icon="res://icon.svg"
@@ -20,6 +20,8 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=160
 window/size/viewport_height=192
+window/size/window_width_override=640
+window/size/window_height_override=768
 window/stretch/mode="canvas_items"
 
 [input]
