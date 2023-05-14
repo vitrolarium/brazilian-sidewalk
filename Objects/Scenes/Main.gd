@@ -26,10 +26,12 @@ func _on_player_game_over() -> void:
 	is_game_over = true
 	$death_timer.start()
 	$score_timer.stop()
+	$music.stop()
 
 
 func _on_death_timer_timeout() -> void:
 	$GameOver.show()
+	$GameOver/Button.grab_focus()
 
 
 func _on_score_timer_timeout() -> void:

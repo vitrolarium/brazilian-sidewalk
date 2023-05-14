@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://brdgwqkpis74r"
+path="res://.godot/imported/brazilian rush.mp3-d37c75c648363b59d4f5b1e6370d0791.mp3str"
+
+[deps]
+
+source_file="res://brazilian rush.mp3"
+dest_files=["res://.godot/imported/brazilian rush.mp3-d37c75c648363b59d4f5b1e6370d0791.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

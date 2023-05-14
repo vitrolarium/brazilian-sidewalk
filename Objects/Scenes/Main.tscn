@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://biv4ggorh453n"]
+[gd_scene load_steps=9 format=3 uid="uid://biv4ggorh453n"]
 
 [ext_resource type="Script" path="res://Objects/Scenes/Main.gd" id="1_fmxtq"]
 [ext_resource type="PackedScene" uid="uid://8442rfdmkaiy" path="res://Objects/Scenes/sidewalks/sidewalk_manager.tscn" id="1_fpg5d"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cyefu35yjq2b1" path="res://Objects/Props/prop-spawner.tscn" id="3_u11o0"]
 [ext_resource type="PackedScene" uid="uid://cfmrxvv3yuw68" path="res://Objects/UI/hud.tscn" id="6_8e0kt"]
 [ext_resource type="PackedScene" uid="uid://cvuh4x2tb8n06" path="res://Objects/UI/game-over.tscn" id="7_61no0"]
+[ext_resource type="AudioStream" uid="uid://brdgwqkpis74r" path="res://brazilian rush.mp3" id="8_v4xse"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_fmxtq")
@@ -43,6 +44,10 @@ grow_vertical = 1
 visible = false
 offset_right = 160.0
 offset_bottom = 192.0
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_v4xse")
+autoplay = true
 
 [connection signal="timeout" from="score_timer" to="." method="_on_score_timer_timeout"]
 [connection signal="timeout" from="death_timer" to="." method="_on_death_timer_timeout"]
