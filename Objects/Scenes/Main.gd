@@ -26,7 +26,7 @@ func _on_player_game_over() -> void:
 	is_game_over = true
 	$death_timer.start()
 	$score_timer.stop()
-	$music.stop()
+	$music_animation.play("fade_out")
 
 
 func _on_death_timer_timeout() -> void:

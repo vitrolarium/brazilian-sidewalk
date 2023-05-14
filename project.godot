@@ -13,8 +13,10 @@ config_version=5
 config/name="Brazilian-sidewalk"
 run/main_scene="res://Objects/UI/main-menu.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
+boot_splash/bg_color=Color(0.101961, 0.160784, 0.0431373, 1)
+boot_splash/image="res://Sprites/Duderemake2.png"
 boot_splash/use_filter=false
-config/icon="res://icon.svg"
+config/icon="res://Sprites/Duderemake1.png"
 
 [display]
 

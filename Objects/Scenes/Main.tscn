@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://biv4ggorh453n"]
+[gd_scene load_steps=12 format=3 uid="uid://biv4ggorh453n"]
 
 [ext_resource type="Script" path="res://Objects/Scenes/Main.gd" id="1_fmxtq"]
 [ext_resource type="PackedScene" uid="uid://8442rfdmkaiy" path="res://Objects/Scenes/sidewalks/sidewalk_manager.tscn" id="1_fpg5d"]
@@ -8,6 +8,66 @@
 [ext_resource type="PackedScene" uid="uid://cfmrxvv3yuw68" path="res://Objects/UI/hud.tscn" id="6_8e0kt"]
 [ext_resource type="PackedScene" uid="uid://cvuh4x2tb8n06" path="res://Objects/UI/game-over.tscn" id="7_61no0"]
 [ext_resource type="AudioStream" uid="uid://brdgwqkpis74r" path="res://brazilian rush.mp3" id="8_v4xse"]
+
+[sub_resource type="Animation" id="Animation_iamlu"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("music:pitch_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.01]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("music:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_6gqi0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("music:pitch_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("music:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_prmwt"]
+_data = {
+"RESET": SubResource("Animation_6gqi0"),
+"fade_out": SubResource("Animation_iamlu")
+}
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_fmxtq")
@@ -48,6 +108,11 @@ offset_bottom = 192.0
 [node name="music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_v4xse")
 autoplay = true
+
+[node name="music_animation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_prmwt")
+}
 
 [connection signal="timeout" from="score_timer" to="." method="_on_score_timer_timeout"]
 [connection signal="timeout" from="death_timer" to="." method="_on_death_timer_timeout"]
