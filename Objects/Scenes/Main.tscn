@@ -1,15 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://biv4ggorh453n"]
+[gd_scene load_steps=8 format=3 uid="uid://biv4ggorh453n"]
 
 [ext_resource type="Script" path="res://Objects/Scenes/Main.gd" id="1_fmxtq"]
 [ext_resource type="PackedScene" uid="uid://8442rfdmkaiy" path="res://Objects/Scenes/sidewalks/sidewalk_manager.tscn" id="1_fpg5d"]
 [ext_resource type="PackedScene" uid="uid://bh6ho6pu3vjdv" path="res://Objects/Player/player.tscn" id="2_diuxg"]
 [ext_resource type="PackedScene" uid="uid://dp53q87pb3bjc" path="res://Objects/WalkingPeoples/walking_people_spawner.tscn" id="3_06x6p"]
 [ext_resource type="PackedScene" uid="uid://cyefu35yjq2b1" path="res://Objects/Props/prop-spawner.tscn" id="3_u11o0"]
+[ext_resource type="PackedScene" uid="uid://cfmrxvv3yuw68" path="res://Objects/UI/hud.tscn" id="6_8e0kt"]
+[ext_resource type="PackedScene" uid="uid://cvuh4x2tb8n06" path="res://Objects/UI/game-over.tscn" id="7_61no0"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_fmxtq")
 metadata/_edit_vertical_guides_ = [112.0, 0.0]
 metadata/_edit_horizontal_guides_ = [0.0, 192.0]
+
+[node name="score_timer" type="Timer" parent="."]
+wait_time = 0.25
+autostart = true
+
+[node name="death_timer" type="Timer" parent="."]
 
 [node name="SidewalkManager" parent="." instance=ExtResource("1_fpg5d")]
 
@@ -24,4 +32,18 @@ summon_wait_time = 0.25
 [node name="Player" parent="." instance=ExtResource("2_diuxg")]
 position = Vector2(67, 94)
 
+[node name="hud" parent="." instance=ExtResource("6_8e0kt")]
+anchors_preset = 10
+anchor_bottom = 0.0
+offset_right = 160.0
+offset_bottom = 192.0
+grow_vertical = 1
+
+[node name="GameOver" parent="." instance=ExtResource("7_61no0")]
+visible = false
+offset_right = 160.0
+offset_bottom = 192.0
+
+[connection signal="timeout" from="score_timer" to="." method="_on_score_timer_timeout"]
+[connection signal="timeout" from="death_timer" to="." method="_on_death_timer_timeout"]
 [connection signal="game_over" from="Player" to="." method="_on_player_game_over"]

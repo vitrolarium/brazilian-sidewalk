@@ -21,6 +21,7 @@ theme = ExtResource("1_nk4ud")
 script = ExtResource("2_7h14t")
 
 [node name="MoneyLabel" type="Label" parent="."]
+visible = false
 layout_mode = 1
 offset_right = 1.0
 offset_bottom = 15.0
@@ -29,11 +30,10 @@ label_settings = SubResource("LabelSettings_2e6ja")
 
 [node name="ScoreLabel" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
+anchors_preset = 10
 anchor_right = 1.0
-offset_left = -1.0
-offset_bottom = 15.0
-grow_horizontal = 0
+offset_bottom = 21.0
+grow_horizontal = 2
 text = "0"
 label_settings = SubResource("LabelSettings_fyigs")
+horizontal_alignment = 1

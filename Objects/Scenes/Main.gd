@@ -1,6 +1,7 @@
 extends Node2D
 
 var is_game_over = false
+var score : int = 0
 
 func start_game():
 	$SidewalkManager.is_enabled = true
@@ -23,7 +24,14 @@ func _on_player_game_over() -> void:
 	$PropSpawner.deactivate(true)
 	#$WalkingPeopleSpawner.deactivate(true)
 	is_game_over = true
+	$death_timer.start()
+	$score_timer.stop()
 
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("reset"):
-		start_game()
+
+func _on_death_timer_timeout() -> void:
+	$GameOver.show()
+
+
+func _on_score_timer_timeout() -> void:
+	score += 1
+	$hud.set_score(score)
