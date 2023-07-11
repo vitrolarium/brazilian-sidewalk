@@ -14,3 +14,6 @@ esses obstáculos são:
 
 quanto mais longe voce for, mais reais voce consegue!
 use esses reais para comprar powerups e colecionaveis com os vendedores das barracas.
+
+esse é o meu primeiro jogo oficial, disponível no itch.io.
+https://vitrolarium.itch.io/brazilian-sidewalk
