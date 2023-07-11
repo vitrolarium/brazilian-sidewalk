@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cfmrxvv3yuw68"]
 
-[ext_resource type="Theme" uid="uid://o7vaqhnt5s5i" path="res://Objects/UI/default_theme.tres" id="1_nk4ud"]
-[ext_resource type="Script" path="res://Objects/UI/hud.gd" id="2_7h14t"]
+[ext_resource type="Theme" uid="uid://o7vaqhnt5s5i" path="res://UI/default_theme.tres" id="1_nk4ud"]
+[ext_resource type="Script" path="res://UI/hud.gd" id="2_7h14t"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2e6ja"]
 font_size = 10

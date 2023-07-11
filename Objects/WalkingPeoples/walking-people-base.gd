@@ -37,11 +37,13 @@ func walk():
 
 func move():
 	if $ObjectDetection.is_colliding():
-		var dodge_dir = position.x - $ObjectDetection.get_collider(0).position.x
-		if (is_stressed and not is_player_on_detection(0)) or (not is_stressed):
-			walk_dodge(dodge_dir)
-		else:
-			walk_dodge(-dodge_dir)
+		var col = $ObjectDetection.get_collider(0)
+		if col:
+			var dodge_dir = position.x - col.position.x
+			if (is_stressed and not is_player_on_detection(0)) or (not is_stressed):
+				walk_dodge(dodge_dir)
+			else:
+				walk_dodge(-dodge_dir)
 	else:
 		walk()
 	move_and_slide()

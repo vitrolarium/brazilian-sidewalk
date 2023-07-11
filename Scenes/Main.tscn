@@ -1,13 +1,13 @@
 [gd_scene load_steps=12 format=3 uid="uid://biv4ggorh453n"]
 
-[ext_resource type="Script" path="res://Objects/Scenes/Main.gd" id="1_fmxtq"]
-[ext_resource type="PackedScene" uid="uid://8442rfdmkaiy" path="res://Objects/Scenes/sidewalks/sidewalk_manager.tscn" id="1_fpg5d"]
+[ext_resource type="Script" path="res://Scenes/Main.gd" id="1_fmxtq"]
+[ext_resource type="PackedScene" uid="uid://8442rfdmkaiy" path="res://Scenes/sidewalks/sidewalk_manager.tscn" id="1_fpg5d"]
 [ext_resource type="PackedScene" uid="uid://bh6ho6pu3vjdv" path="res://Objects/Player/player.tscn" id="2_diuxg"]
 [ext_resource type="PackedScene" uid="uid://dp53q87pb3bjc" path="res://Objects/WalkingPeoples/walking_people_spawner.tscn" id="3_06x6p"]
 [ext_resource type="PackedScene" uid="uid://cyefu35yjq2b1" path="res://Objects/Props/prop-spawner.tscn" id="3_u11o0"]
-[ext_resource type="PackedScene" uid="uid://cfmrxvv3yuw68" path="res://Objects/UI/hud.tscn" id="6_8e0kt"]
-[ext_resource type="PackedScene" uid="uid://cvuh4x2tb8n06" path="res://Objects/UI/game-over.tscn" id="7_61no0"]
-[ext_resource type="AudioStream" uid="uid://brdgwqkpis74r" path="res://brazilian rush.mp3" id="8_v4xse"]
+[ext_resource type="PackedScene" uid="uid://cfmrxvv3yuw68" path="res://UI/hud.tscn" id="6_8e0kt"]
+[ext_resource type="PackedScene" uid="uid://cvuh4x2tb8n06" path="res://UI/game-over.tscn" id="7_61no0"]
+[ext_resource type="AudioStream" uid="uid://brdgwqkpis74r" path="res://Sounds/brazilian rush.mp3" id="8_v4xse"]
 
 [sub_resource type="Animation" id="Animation_iamlu"]
 resource_name = "fade_out"

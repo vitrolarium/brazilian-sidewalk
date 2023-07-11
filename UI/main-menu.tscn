@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://c5j40cadxt4j"]
 
-[ext_resource type="Theme" uid="uid://o7vaqhnt5s5i" path="res://Objects/UI/default_theme.tres" id="1_q30o6"]
-[ext_resource type="Script" path="res://Objects/UI/main-menu.gd" id="2_mdqvl"]
-[ext_resource type="PackedScene" uid="uid://biv4ggorh453n" path="res://Objects/Scenes/Main.tscn" id="3_3r00b"]
-[ext_resource type="AudioStream" uid="uid://bp08aspv4iosg" path="res://brazilian high.mp3" id="4_ahfrl"]
+[ext_resource type="Theme" uid="uid://o7vaqhnt5s5i" path="res://UI/default_theme.tres" id="1_rm014"]
+[ext_resource type="Script" path="res://UI/main-menu.gd" id="2_uwewp"]
+[ext_resource type="PackedScene" uid="uid://biv4ggorh453n" path="res://Scenes/Main.tscn" id="3_adjct"]
+[ext_resource type="AudioStream" uid="uid://bp08aspv4iosg" path="res://Sounds/Musics/brazilian high.mp3" id="4_wx4xs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j88m2"]
 bg_color = Color(0.137255, 0.470588, 0.137255, 1)
@@ -28,9 +28,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_q30o6")
-script = ExtResource("2_mdqvl")
-main_game = ExtResource("3_3r00b")
+theme = ExtResource("1_rm014")
+script = ExtResource("2_uwewp")
+main_game = ExtResource("3_adjct")
 
 [node name="Panel2" type="Panel" parent="."]
 layout_mode = 1
@@ -89,7 +89,7 @@ grow_vertical = 2
 text = "Play"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_ahfrl")
+stream = ExtResource("4_wx4xs")
 autoplay = true
 
 [connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

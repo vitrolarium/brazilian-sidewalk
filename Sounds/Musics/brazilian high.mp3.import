@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bp08aspv4iosg"
+path="res://.godot/imported/brazilian high.mp3-7defb7f3808064a849f80f8876a52593.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Musics/brazilian high.mp3"
+dest_files=["res://.godot/imported/brazilian high.mp3-7defb7f3808064a849f80f8876a52593.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
